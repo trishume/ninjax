@@ -6,7 +6,7 @@ ninjax! { |indata| block}
 runs the ninjax server and passes the ninjaxed object to the block and sends back the block's returned value
 =end
 class Object
-  def ninjax!()
+  def ninjax!(message = false)
     if(block_given?)
       server = TCPServer.open(1337)  # Socket to listen on port 1337
       client = server.accept       # Wait for a client to connect
@@ -18,6 +18,7 @@ class Object
       client.close                 # Disconnect from the def client
       server.close
     else
+        puts "ninjaxing!" if message
        s = TCPSocket.open('localhost', 1337)
        senddata = Marshal.dump(self)
        s.puts senddata.length
