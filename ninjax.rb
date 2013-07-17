@@ -33,3 +33,4 @@ class Object
   end
   alias :! :ninjax!
 end
+# lol
