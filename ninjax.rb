@@ -1,6 +1,7 @@
 require 'socket'      # Sockets are in standard library
 =begin
 usage:
+# test
 obj.ninjax! returns the ninaxed object
 ninjax! { |indata| block}
 runs the ninjax server and passes the ninjaxed object to the block and sends back the block's returned value
